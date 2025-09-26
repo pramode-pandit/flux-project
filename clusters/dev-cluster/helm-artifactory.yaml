@@ -1,8 +1,8 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
-  name: artifactory-repo
+  name: bitnami
   namespace: flux-system
 spec:
-  interval: 1m
-  url: https://artifactory.mycompany.com/artifactory/helm
+  interval: 1h
+  url: https://charts.bitnami.com/bitnami

@@ -1,17 +1,17 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: nginx-hlm
-  namespace: nginx
+  name: nginx
+  namespace: default
 spec:
   interval: 5m
   chart:
     spec:
       chart: nginx
-      version: 1.2.3   # pick the version available in Artifactory
+      version: 15.10.2        # pick a stable version from Bitnami
       sourceRef:
         kind: HelmRepository
-        name: artifactory-repo
+        name: bitnami
         namespace: flux-system
   values:
     replicaCount: 2
